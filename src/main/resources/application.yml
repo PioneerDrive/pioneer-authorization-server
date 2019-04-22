@@ -1,3 +1,5 @@
+#https://github.com/Baeldung/oauth-microservices/tree/master/1x
+
 server:
   port: 8769    #default port where the service will be started
   context-path: /pioneer-authorization-server
@@ -32,6 +34,13 @@ security:
   user:
     password: password
   ignored: /css/**,/js/**,/favicon.ico,/webjars/** 
+  oauth2:
+    client:
+      client-id: bgonza
+      client-secret: pwd12345
+      scope: read,write
+      auto-approve-scopes: '.*'
+#curl bgonza:pwd12345@localhost:8769/oauth/token -d grant_type=client_credentials      
 
 logging:
   level:
